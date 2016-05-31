@@ -1,5 +1,8 @@
 toDoApp.controller('TodoListController', function(){
-  this.todo = "ToDo1";
+  this.todos = [
+    {task: "ToDo1", done: true},
+    {task: "Kill Cat", done: false}];
+     
 });
 
 

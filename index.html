@@ -10,11 +10,15 @@
   </head>
   <body>
     <div ng-controller="TodoListController as controller">
-     <p>{{controller.todo}}</p> 
-     <label>Name:</label>
+
+       <ul class="unstyled">
+        <li ng-repeat="item in controller.todos">Do this: {{item.task}} -  {{item.done ? "completed" : "incomplete" }}</li>
+      </ul>
+
+     <label>Quote of the day:</label>
      <input type="text" ng-model="yourName" placeholder="Enter a name here">
      <hr>
-     <h1>Hello {{yourName}}!</h1>
+     <h1>Quote: {{yourName}}!</h1>
    </div>
   </body>
 </html>
