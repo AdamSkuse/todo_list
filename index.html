@@ -15,8 +15,11 @@
         <li ng-repeat="item in controller.todos">Do this: {{item.task}} -  {{item.done ? "completed" : "incomplete" }}</li>
       </ul>
 
-     <label>Quote of the day:</label>
-     <input type="text" ng-model="yourName" placeholder="Enter a name here">
+     <label>Enter new to do:</label>
+     <input type="text" ng-model="todoText" placeholder="Enter a task here">
+     <button ng-click="controller.addToDo(todoText);">Add task</button>
+     <button ng-click="controller.removeToDo();">Remove last task</button>
+     </input>
      <hr>
      <h1>Quote: {{yourName}}!</h1>
    </div>
