@@ -8,12 +8,13 @@
     <script src="app.js"></script>
     <script src="controllers.js"></script>
     <script src="ToDoFactory.js"></script>
+    <script src="ToDoService.js"></script>
   </head>
   <body>
     <div ng-controller="ToDoController as controller">
 
        <ul class="unstyled">
-        <li ng-repeat="item in controller.todos">Do this: {{item.task}} -  {{item.completed ? "completed" : "incomplete" }}
+        <li ng-repeat="item in controller.todos">Do this: {{item.text}} -  {{item.completed ? "completed" : "incomplete" }}
         <input type="checkbox" ng-model="item.completed">
         </li>
       </ul>
@@ -24,8 +25,6 @@
      <button ng-click="controller.addToDo(todoText);">Add task</button>
      <button ng-click="controller.removeToDo();">Remove last task</button>
      </input>
-     <hr>
-     <h1>Quote: {{yourName}}!</h1>
    </div>
   </body>
 </html>

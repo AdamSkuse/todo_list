@@ -1,9 +1,8 @@
-toDoApp.controller('ToDoController', ['ToDoFactory', function(ToDoFactory) {
+toDoApp.controller('ToDoController', ['ToDoFactory', 'ToDoService', function(ToDoFactory, ToDoService) {
+
 
   var self = this;
-  self.todos = [
-    {task: "ToDo1", done: true},
-    {task: "Kill Cat", done: false}];
+  self.todos = ToDoService.getAll();
 
   self.addToDo = function(todoText){
     self.todos.push(new ToDoFactory(todoText));
