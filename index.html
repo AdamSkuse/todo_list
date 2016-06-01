@@ -7,13 +7,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="controllers.js"></script>
+    <script src="ToDoFactory.js"></script>
   </head>
   <body>
-    <div ng-controller="TodoListController as controller">
+    <div ng-controller="ToDoController as controller">
 
        <ul class="unstyled">
-        <li ng-repeat="item in controller.todos">Do this: {{item.task}} -  {{item.done ? "completed" : "incomplete" }}</li>
+        <li ng-repeat="item in controller.todos">Do this: {{item.task}} -  {{item.completed ? "completed" : "incomplete" }}
+        <input type="checkbox" ng-model="item.completed">
+        </li>
       </ul>
+
 
      <label>Enter new to do:</label>
      <input type="text" ng-model="todoText" placeholder="Enter a task here">
